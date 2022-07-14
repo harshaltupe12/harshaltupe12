@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @harshaltupe12
 - 👀 I’m interested in Coding💞️
-- 🌱 I’m currently learning React JS
+- 🌱 I’m currently Pass-out Diploma In Computer  
 - 📫 How to reach me harshaltupe12@gmail.com
 
 <!---
