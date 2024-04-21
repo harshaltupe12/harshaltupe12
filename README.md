@@ -74,6 +74,14 @@
   <img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo"  />
 </div>
 
+<h1>
+<div align="center">
+  <img src="https://profile-counter.glitch.me/harshaltupe12/count.svg?"  />
+</div>
+  
+<h1/>
+
+###
 
 
 ###
