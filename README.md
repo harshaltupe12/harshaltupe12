@@ -15,9 +15,9 @@
 
 <p align="left"> </p>
 
-- 🔭 I’m currently working on **News App**
+- 🔭 I’m currently working on **MERN STACK**
 
-- 🌱 I’m currently learning **React JS, React Native**
+- 🌱 I’m currently learning **MongoDB, ExpressJS, ReactJS, NodeJS**
 
 - 💬 Ask me about **Web Development**
 
