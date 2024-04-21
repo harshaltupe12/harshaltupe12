@@ -1,13 +1,17 @@
-[![MasterHead](https://1.bp.blogspot.com/-7A4WynwLsMw/XbBpCXG8fHI/AAAAAAAAMt4/uOa1bpLskYgrwGbllhSu2SDj_Mig8SXJQCLcBGAsYHQ/s1600/2000_600px.gif)](https://rishavchanda.io)
+<div align="center">
+  <img height="400" width="1000" src="https://repository-images.githubusercontent.com/588181932/e36ec678-7984-4cdd-8e4c-a3932772ff8e"/>
+</div>
+
+###
 
 <h1 align="center">
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hi+There!+👋;+I'm+Harshal+Tupe!+;Passinate+Software+Developer!+;MERN+Stack+Developer!+;" />
 </h1>
 <h1 align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Jersey+10+Charted&size=49&duration=5&pause=10000&color=EDF7FFFD&background=EEF9FF00&random=false&width=650&height=70&lines=A+passionate+developer+from+India"/>
+<img src="https://readme-typing-svg.herokuapp.com?font=Jersey+10+Charted&size=49&duration=5&pause=10000&color=FFF975FD&background=EEF9FF00&random=false&width=650&height=70&lines=A+passionate+developer+from+India"/>
 </h1>
 
-<img align="right" alt="Coding" width="400" height=auto src="https://user-images.githubusercontent.com/55389276/140866485-8fb1c876-9a8f-4d6a-98dc-08c4981eaf70.gif"/>
+<img align="right" alt="Coding" width="400" height=auto src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif"/>
 
 <p align="left"> </p>
 
