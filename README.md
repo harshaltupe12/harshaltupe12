@@ -25,7 +25,7 @@
 
 <h3 align="left" style="color:red">Connect with me:</h3>
 <p align="left">
-<a href="www.linkedin.com/in/harshal-tupe" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="harshaltupe" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/in/harshal-tupe?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="harshaltupe" height="30" width="40" /></a>
 <a href="https://instagram.com/harshal.tupe_" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="harshal.tupe_" height="30" width="40" /></a>
 </p>
 
