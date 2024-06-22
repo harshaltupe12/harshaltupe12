@@ -5,7 +5,7 @@
 ###
 
 <h1 align="center">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hi+There!+👋;+I'm+Harshal+Tupe!+;Passinate+Software+Developer!+;MERN+Stack+Developer!+;" />
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&color=F4FF35&duration=4000&lines=Hi+There!+👋;+I'm+Harshal+Tupe!+;Passinate+Software+Developer!+;MERN+Stack+Developer!+;" />
 </h1>
 <h1 align="center">
 <img align="center" src="https://readme-typing-svg.herokuapp.com?font=Jersey+10+Charted&size=49&duration=5&pause=10000&color=CA22F7FF&background=EEF9FF00&random=false&width=650&height=70&lines=A+passionate+developer+from+India"/>
