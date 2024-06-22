@@ -93,10 +93,6 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=harshaltupe12&radius=16&theme=react&area=true&order=5" height="auto" alt="activity-graph graph"  />
 </div>
 
-###
-<div align="center">
-  <img height="auto" src="https://64.media.tumblr.com/61d4fea89f86eb4cb5a7e616d9cd4832/tumblr_owi25v6uAo1r4gsiio1_1280.gif"/>
-</div>
 
 ###
 <div align="center" height="auto" width="auto">
