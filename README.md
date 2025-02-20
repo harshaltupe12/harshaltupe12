@@ -96,7 +96,7 @@
 
 ###
 <div align="center" height="auto" width="auto">
-  <img src="https://github-readme-quotes-bay.vercel.app/quote?theme=default&animation=default&layout=socrates&font=default&fontColor=white&bgColor=black" align="center" height="auto" width="980"/>
+<!--   <img src="https://github-readme-quotes-bay.vercel.app/quote?theme=default&animation=default&layout=socrates&font=default&fontColor=white&bgColor=black" align="center" height="auto" width="980"/> -->
 </div>
 
 
