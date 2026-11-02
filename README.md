@@ -8,60 +8,47 @@
 
 <br />
 
-<img src="assets/h-technologies.svg" width="100%" alt="Technologies" />
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/h-tech-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/h-tech-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/h-tech-dark.svg" />
+  <img src="assets/h-tech-light.svg" width="100%" alt="01 Technologies" />
+</picture>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/TypeScript-2E4A7D?style=for-the-badge&logo=typescript&logoColor=E8EEF8" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/JavaScript-2E4A7D?style=for-the-badge&logo=javascript&logoColor=E8EEF8" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/Python-2E4A7D?style=for-the-badge&logo=python&logoColor=E8EEF8" alt="Python" />
-  <img src="https://img.shields.io/badge/C%23-2E4A7D?style=for-the-badge&logo=dotnet&logoColor=E8EEF8" alt="C#" />
-  <br />
-  <img src="https://img.shields.io/badge/React-1E2F55?style=for-the-badge&logo=react&logoColor=E8EEF8" alt="React" />
-  <img src="https://img.shields.io/badge/Next.js-1E2F55?style=for-the-badge&logo=nextdotjs&logoColor=E8EEF8" alt="Next.js" />
-  <img src="https://img.shields.io/badge/Tailwind%20CSS-1E2F55?style=for-the-badge&logo=tailwindcss&logoColor=E8EEF8" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Node.js-1E2F55?style=for-the-badge&logo=nodedotjs&logoColor=E8EEF8" alt="Node.js" />
-  <img src="https://img.shields.io/badge/Express-1E2F55?style=for-the-badge&logo=express&logoColor=E8EEF8" alt="Express" />
-  <br />
-  <img src="https://img.shields.io/badge/FastAPI-2E4A7D?style=for-the-badge&logo=fastapi&logoColor=E8EEF8" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/.NET-2E4A7D?style=for-the-badge&logo=dotnet&logoColor=E8EEF8" alt=".NET" />
-  <img src="https://img.shields.io/badge/Socket.IO-2E4A7D?style=for-the-badge&logo=socketdotio&logoColor=E8EEF8" alt="Socket.IO" />
-  <img src="https://img.shields.io/badge/PostgreSQL-2E4A7D?style=for-the-badge&logo=postgresql&logoColor=E8EEF8" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/MongoDB-2E4A7D?style=for-the-badge&logo=mongodb&logoColor=E8EEF8" alt="MongoDB" />
-  <br />
-  <img src="https://img.shields.io/badge/MySQL-1E2F55?style=for-the-badge&logo=mysql&logoColor=E8EEF8" alt="MySQL" />
-  <img src="https://img.shields.io/badge/Prisma-1E2F55?style=for-the-badge&logo=prisma&logoColor=E8EEF8" alt="Prisma" />
-  <img src="https://img.shields.io/badge/MinIO-1E2F55?style=for-the-badge&logo=minio&logoColor=E8EEF8" alt="MinIO" />
-  <img src="https://img.shields.io/badge/Docker-1E2F55?style=for-the-badge&logo=docker&logoColor=E8EEF8" alt="Docker" />
-  <img src="https://img.shields.io/badge/Jenkins-1E2F55?style=for-the-badge&logo=jenkins&logoColor=E8EEF8" alt="Jenkins" />
-  <br />
-  <img src="https://img.shields.io/badge/Git-2E4A7D?style=for-the-badge&logo=git&logoColor=E8EEF8" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-2E4A7D?style=for-the-badge&logo=github&logoColor=E8EEF8" alt="GitHub" />
-  <img src="https://img.shields.io/badge/Vercel-2E4A7D?style=for-the-badge&logo=vercel&logoColor=E8EEF8" alt="Vercel" />
-  <img src="https://img.shields.io/badge/OVHcloud-2E4A7D?style=for-the-badge&logo=ovh&logoColor=E8EEF8" alt="OVHcloud" />
-  <img src="https://img.shields.io/badge/MQTT-2E4A7D?style=for-the-badge&logo=mqtt&logoColor=E8EEF8" alt="MQTT" />
-  <br />
-  <img src="https://img.shields.io/badge/DICOM-1E2F55?style=for-the-badge" alt="DICOM" />
-  <img src="https://img.shields.io/badge/Orthanc-1E2F55?style=for-the-badge" alt="Orthanc" />
-  <img src="https://img.shields.io/badge/OPC%20UA-1E2F55?style=for-the-badge" alt="OPC UA" />
-  <img src="https://img.shields.io/badge/Modbus-1E2F55?style=for-the-badge" alt="Modbus" />
+  <picture>
+    <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/tech-mobile.svg" />
+    <img src="assets/tech.svg" alt="Tech stack: TypeScript, JavaScript, Python, C#, React, Next.js, Tailwind CSS, Node.js, Express, FastAPI, .NET, Socket.IO, PostgreSQL, MongoDB, MySQL, Prisma, MinIO, Docker, Jenkins, Git, GitHub, Vercel, OVHcloud, MQTT, DICOM, Orthanc, OPC UA, Modbus" />
+  </picture>
 </div>
 
 <br />
 
-<img src="assets/h-about.svg" width="100%" alt="About Me" />
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/h-about-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/h-about-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/h-about-dark.svg" />
+  <img src="assets/h-about-light.svg" width="100%" alt="02 About" />
+</picture>
 
-<div align="center">
-  <img src="assets/about.svg" width="100%" alt="Harshal Tupe, Senior Software Engineer at Miraki Labs. Led a cloud teleradiology platform live in 25+ hospitals, processing 100+ studies a day." />
-</div>
-
-<br />
-
-<img src="assets/h-activity.svg" width="100%" alt="Activity" />
-
-<div align="center">
-  <img src="assets/activity.svg" width="100%" alt="Contribution activity over the last 12 months" />
-</div>
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/about-mobile.svg" />
+  <img src="assets/about.svg" width="100%" alt="I care how things work, all the way down. I like owning things end to end, from the protocol layer up to the interface people actually touch. How I work: design first, chase edge cases, plan for systems." />
+</picture>
 
 <br />
 
-<img src="assets/footer.svg" width="100%" alt="Thanks for visiting" />
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/h-activity-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/h-activity-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/h-activity-dark.svg" />
+  <img src="assets/h-activity-light.svg" width="100%" alt="03 Activity" />
+</picture>
+
+<a href="mailto:harshaltupe12@gmail.com">
+  <picture>
+    <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/harshaltupe12/harshaltupe12/main/assets/activity-mobile.svg" />
+    <img src="assets/activity.svg" width="100%" alt="Contributions over the last 12 months drawn as a mountain ridge, then: Got an interesting problem? I read every message. Email harshaltupe12@gmail.com." />
+  </picture>
+</a>
+
