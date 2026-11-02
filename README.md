@@ -1,109 +1,67 @@
 <div align="center">
-  <img height="auto" src="https://repository-images.githubusercontent.com/588181932/e36ec678-7984-4cdd-8e4c-a3932772ff8e"/>
+  <img src="assets/banner.svg" width="100%" alt="Welcome to Harshal&#39;s GitHub" />
+  <br /><br />
+  <a href="https://www.linkedin.com/in/harshal-tupe"><img src="https://img.shields.io/badge/LinkedIn-1E2F55?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI0U4RUVGOCIgZD0iTTIwLjQ0NyAyMC40NTJoLTMuNTU0di01LjU2OWMwLTEuMzI4LS4wMjctMy4wMzctMS44NTItMy4wMzctMS44NTMgMC0yLjEzNiAxLjQ0NS0yLjEzNiAyLjkzOXY1LjY2N0g5LjM1MVY5aDMuNDE0djEuNTYxaC4wNDZjLjQ3Ny0uOSAxLjYzNy0xLjg1IDMuMzctMS44NSAzLjYwMSAwIDQuMjY3IDIuMzcgNC4yNjcgNS40NTV2Ni4yODZ6TTUuMzM3IDcuNDMzYTIuMDY0IDIuMDY0IDAgMSAxIDAtNC4xMjggMi4wNjQgMi4wNjQgMCAwIDEgMCA0LjEyOHptMS43ODIgMTMuMDE5SDMuNTU1VjloMy41NjR2MTEuNDUyek0yMi4yMjUgMEgxLjc3MUMuNzkyIDAgMCAuNzc0IDAgMS43Mjl2MjAuNTQyQzAgMjMuMjI3Ljc5MiAyNCAxLjc3MSAyNGgyMC40NTFDMjMuMiAyNCAyNCAyMy4yMjcgMjQgMjIuMjcxVjEuNzI5QzI0IC43NzQgMjMuMiAwIDIyLjIyMiAwaC4wMDN6Ii8%2BPC9zdmc%2B&logoColor=E8EEF8" alt="LinkedIn" /></a>
+  <a href="https://harshal-tupe-portfolio.vercel.app"><img src="https://img.shields.io/badge/Portfolio-2E4A7D?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI0U4RUVGOCIgZD0iTTEyIDBhMTIgMTIgMCAxIDAgMCAyNCAxMiAxMiAwIDAgMCAwLTI0em03LjkzIDdoLTMuMWExOC42IDE4LjYgMCAwIDAtMS41My00LjMzQTEwLjA0IDEwLjA0IDAgMCAxIDE5LjkzIDd6TTEyIDIuMDRjLjk1IDEuMzYgMS43IDIuOTggMi4yIDQuOTZIOS44Yy41LTEuOTggMS4yNS0zLjYgMi4yLTQuOTZ6TTIuMjYgMTRhMTAuMSAxMC4xIDAgMCAxIDAtNGgzLjQyYTIwLjcgMjAuNyAwIDAgMCAwIDRIMi4yNnptLjgxIDJoMy4xYy4zNyAxLjYuODggMy4wNiAxLjUzIDQuMzNBMTAuMDQgMTAuMDQgMCAwIDEgMy4wNyAxNnptMy4xLTloLTMuMUExMC4wNCAxMC4wNCAwIDAgMSA3LjcgMi42NyAxOC42IDE4LjYgMCAwIDAgNi4xNyA3ek0xMiAyMS45NmMtLjk1LTEuMzYtMS43LTIuOTgtMi4yLTQuOTZoNC40Yy0uNSAxLjk4LTEuMjUgMy42LTIuMiA0Ljk2ek0xNC42NiAxNUg5LjM0YTE4LjYgMTguNiAwIDAgMSAwLTZoNS4zMmExOC42IDE4LjYgMCAwIDEgMCA2em0uNjQgNS4zM2MuNjUtMS4yNyAxLjE2LTIuNzMgMS41My00LjMzaDMuMWExMC4wNCAxMC4wNCAwIDAgMS00LjYzIDQuMzN6TTE4LjMyIDE0YTIwLjcgMjAuNyAwIDAgMCAwLTRoMy40MmExMC4xIDEwLjEgMCAwIDEgMCA0aC0zLjQyeiIvPjwvc3ZnPg%3D%3D&logoColor=E8EEF8" alt="Portfolio" /></a>
+  <a href="mailto:harshaltupe12@gmail.com"><img src="https://img.shields.io/badge/Gmail-1E2F55?style=for-the-badge&logo=gmail&logoColor=E8EEF8" alt="Gmail" /></a>
 </div>
 
-###
+<br />
 
+<img src="assets/h-technologies.svg" width="100%" alt="Technologies" />
 
-<h1 align="center">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&color=F4FF35&duration=4000&lines=Hi+There!+👋;+I'm+Harshal+Tupe!+;Passinate+Software+Developer!+;MERN+Stack+Developer!+;" />
-</h1>
-<h1 align="center">
-<img align="center" src="https://readme-typing-svg.herokuapp.com?font=Jersey+10+Charted&size=49&duration=5&pause=10000&color=CA22F7FF&background=EEF9FF00&random=false&width=650&height=70&lines=A+passionate+developer+from+India"/>
-</h1>
-
-<img align="right" alt="Coding" width="400" height=auto src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif"/>
-
-<p align="left"> </p>
-
-- 🔭 I’m currently working on **MERN STACK**
-
-- 🌱 I’m currently learning **MongoDB, ExpressJS, ReactJS, NodeJS**
-
-- 💬 Ask me about **Web Development**
-
-- 📫 How to reach me **harshaltupe12@gmail.com**
-
-<h3 align="left" style="color:red">Connect with me:</h3>
-<p align="left">
-<a href="https://www.linkedin.com/in/harshal-tupe?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="harshaltupe" height="30" width="40" /></a>
-<a href="https://instagram.com/harshal.tupe_" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="harshal.tupe_" height="30" width="40" /></a>
-</p>
-
-<h3 align="left">Languages and Tools:</h3>
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=js" height="40" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=mongodb" height="40" alt="mongodb logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=express" height="40" alt="express logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=nodejs" height="40" alt="nodejs logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=nextjs" height="40" alt="nextjs logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=firebase" height="40" alt="firebase logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=mysql" height="40" alt="mysql logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=php" height="40" alt="php logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=tailwind" height="40" alt="tailwindcss logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=materialui" height="40" alt="materialui logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=bootstrap" height="40" alt="bootstrap logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=sass" height="40" alt="sass logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=css" height="40" alt="css3 logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=postman" height="40" alt="postman logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=git" height="40" alt="git logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=github" height="40" alt="github logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=c" height="40" alt="c logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=cpp" height="40" alt="cplusplus logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=java" height="40" alt="java logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo"  />
+  <img src="https://img.shields.io/badge/TypeScript-2E4A7D?style=for-the-badge&logo=typescript&logoColor=E8EEF8" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/JavaScript-2E4A7D?style=for-the-badge&logo=javascript&logoColor=E8EEF8" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Python-2E4A7D?style=for-the-badge&logo=python&logoColor=E8EEF8" alt="Python" />
+  <img src="https://img.shields.io/badge/C%23-2E4A7D?style=for-the-badge&logo=dotnet&logoColor=E8EEF8" alt="C#" />
+  <br />
+  <img src="https://img.shields.io/badge/React-1E2F55?style=for-the-badge&logo=react&logoColor=E8EEF8" alt="React" />
+  <img src="https://img.shields.io/badge/Next.js-1E2F55?style=for-the-badge&logo=nextdotjs&logoColor=E8EEF8" alt="Next.js" />
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-1E2F55?style=for-the-badge&logo=tailwindcss&logoColor=E8EEF8" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Node.js-1E2F55?style=for-the-badge&logo=nodedotjs&logoColor=E8EEF8" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express-1E2F55?style=for-the-badge&logo=express&logoColor=E8EEF8" alt="Express" />
+  <br />
+  <img src="https://img.shields.io/badge/FastAPI-2E4A7D?style=for-the-badge&logo=fastapi&logoColor=E8EEF8" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/.NET-2E4A7D?style=for-the-badge&logo=dotnet&logoColor=E8EEF8" alt=".NET" />
+  <img src="https://img.shields.io/badge/Socket.IO-2E4A7D?style=for-the-badge&logo=socketdotio&logoColor=E8EEF8" alt="Socket.IO" />
+  <img src="https://img.shields.io/badge/PostgreSQL-2E4A7D?style=for-the-badge&logo=postgresql&logoColor=E8EEF8" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/MongoDB-2E4A7D?style=for-the-badge&logo=mongodb&logoColor=E8EEF8" alt="MongoDB" />
+  <br />
+  <img src="https://img.shields.io/badge/MySQL-1E2F55?style=for-the-badge&logo=mysql&logoColor=E8EEF8" alt="MySQL" />
+  <img src="https://img.shields.io/badge/Prisma-1E2F55?style=for-the-badge&logo=prisma&logoColor=E8EEF8" alt="Prisma" />
+  <img src="https://img.shields.io/badge/MinIO-1E2F55?style=for-the-badge&logo=minio&logoColor=E8EEF8" alt="MinIO" />
+  <img src="https://img.shields.io/badge/Docker-1E2F55?style=for-the-badge&logo=docker&logoColor=E8EEF8" alt="Docker" />
+  <img src="https://img.shields.io/badge/Jenkins-1E2F55?style=for-the-badge&logo=jenkins&logoColor=E8EEF8" alt="Jenkins" />
+  <br />
+  <img src="https://img.shields.io/badge/Git-2E4A7D?style=for-the-badge&logo=git&logoColor=E8EEF8" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub-2E4A7D?style=for-the-badge&logo=github&logoColor=E8EEF8" alt="GitHub" />
+  <img src="https://img.shields.io/badge/Vercel-2E4A7D?style=for-the-badge&logo=vercel&logoColor=E8EEF8" alt="Vercel" />
+  <img src="https://img.shields.io/badge/OVHcloud-2E4A7D?style=for-the-badge&logo=ovh&logoColor=E8EEF8" alt="OVHcloud" />
+  <img src="https://img.shields.io/badge/MQTT-2E4A7D?style=for-the-badge&logo=mqtt&logoColor=E8EEF8" alt="MQTT" />
+  <br />
+  <img src="https://img.shields.io/badge/DICOM-1E2F55?style=for-the-badge" alt="DICOM" />
+  <img src="https://img.shields.io/badge/Orthanc-1E2F55?style=for-the-badge" alt="Orthanc" />
+  <img src="https://img.shields.io/badge/OPC%20UA-1E2F55?style=for-the-badge" alt="OPC UA" />
+  <img src="https://img.shields.io/badge/Modbus-1E2F55?style=for-the-badge" alt="Modbus" />
 </div>
 
+<br />
 
-###
-<h3 align="center">
-  <p> Profile View's</p>
+<img src="assets/h-about.svg" width="100%" alt="About Me" />
+
 <div align="center">
- <img src="https://profile-counter.glitch.me/harshaltupe12/count.svg?"  />
+  <img src="assets/about.svg" width="100%" alt="Harshal Tupe, Senior Software Engineer at Miraki Labs. Led a cloud teleradiology platform live in 25+ hospitals, processing 100+ studies a day." />
 </div>
-<h3/>
 
+<br />
 
-###
+<img src="assets/h-activity.svg" width="100%" alt="Activity" />
+
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=harshaltupe12&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=yeblu&locale=en&hide_border=false&order=1" height="150" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=harshaltupe12&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=yeblu&hide_border=false&order=2" height="150" alt="languages graph"  />
-  <img src="https://streak-stats.demolab.com?user=harshaltupe12&locale=en&mode=daily&theme=yeblu&hide_border=false&border_radius=5&order=3" height="auto" width="655" alt="streak graph"  />
-  <img src="https://github-profile-trophy.vercel.app?username=harshaltupe12&theme=algolia&column=-1&row=1&margin-w=8&margin-h=8&no-bg=true&no-frame=false&order=4" height="auto" alt="trophy graph"  />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=harshaltupe12&radius=16&theme=react&area=true&order=5" height="auto" alt="activity-graph graph"  />
+  <img src="assets/activity.svg" width="100%" alt="Contribution activity over the last 12 months" />
 </div>
 
+<br />
 
-###
-<div align="center" height="auto" width="auto">
-<!--   <img src="https://github-readme-quotes-bay.vercel.app/quote?theme=default&animation=default&layout=socrates&font=default&fontColor=white&bgColor=black" align="center" height="auto" width="980"/> -->
-</div>
-
-
-
-
-
-
-
-
+<img src="assets/footer.svg" width="100%" alt="Thanks for visiting" />

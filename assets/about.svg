@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img" aria-label="Harshal Tupe, Senior Software Engineer at Miraki Labs. Led a cloud teleradiology platform live in 25+ hospitals, processing 100+ studies a day, shipped from design to production in 3 months.">
+  <defs>
+    <linearGradient id="bar" x1="0" x2="1">
+      <stop offset="0" stop-color="#1E2F55"/>
+      <stop offset="1" stop-color="#14213D"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0" stop-color="#2E4A7D" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#A9BCDD"/>
+      <stop offset="1" stop-color="#2E4A7D" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="track" x1="0" x2="1">
+      <stop offset="0" stop-color="#2E4A7D"/>
+      <stop offset="1" stop-color="#A9BCDD"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="799" height="399" rx="14" fill="#0B1324" stroke="#1E2F55"/>
+
+  <!-- code window -->
+  <rect x="24" y="24" width="384" height="352" rx="12" fill="#0E1830" stroke="#1E2F55"/>
+  <path d="M24 36 a12 12 0 0 1 12 -12 h360 a12 12 0 0 1 12 12 v22 h-384 z" fill="url(#bar)"/>
+  <circle cx="44" cy="41" r="5" fill="#6F8FC4"/>
+  <circle cx="62" cy="41" r="5" fill="#4E6CA3"/>
+  <circle cx="80" cy="41" r="5" fill="#2E4A7D"/>
+  <text x="216" y="45" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#A9BCDD">about.ts</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" fill="#CFDAEE">
+    <g text-anchor="end" fill="#2E4A7D" font-size="11">
+      <text x="50" y="88">1</text><text x="50" y="112">2</text><text x="50" y="136">3</text>
+      <text x="50" y="160">4</text><text x="50" y="184">5</text><text x="50" y="208">6</text>
+      <text x="50" y="232">7</text><text x="50" y="256">8</text><text x="50" y="280">9</text>
+      <text x="50" y="304">10</text><text x="50" y="328">11</text>
+    </g>
+    <text x="64" y="88" fill="#5B6E92">// a bit about me</text>
+    <text x="64" y="112"><tspan fill="#6F8FC4">const</tspan> harshal = {</text>
+    <text x="64" y="136">&#160;&#160;<tspan fill="#A9BCDD">role</tspan>: <tspan fill="#E8EEF8">"Senior Software Engineer"</tspan>,</text>
+    <text x="64" y="160">&#160;&#160;<tspan fill="#A9BCDD">team</tspan>: <tspan fill="#E8EEF8">"Miraki Labs"</tspan>,</text>
+    <text x="64" y="184">&#160;&#160;<tspan fill="#A9BCDD">stack</tspan>: [<tspan fill="#E8EEF8">"TypeScript"</tspan>, <tspan fill="#E8EEF8">"React"</tspan>,</text>
+    <text x="64" y="208">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<tspan fill="#E8EEF8">"Node.js"</tspan>, <tspan fill="#E8EEF8">"Python"</tspan>, <tspan fill="#E8EEF8">"C#"</tspan>],</text>
+    <text x="64" y="232">&#160;&#160;<tspan fill="#A9BCDD">domains</tspan>: [<tspan fill="#E8EEF8">"healthcare imaging"</tspan>,</text>
+    <text x="64" y="256">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<tspan fill="#E8EEF8">"industrial data"</tspan>],</text>
+    <text x="64" y="280">&#160;&#160;<tspan fill="#A9BCDD">ownership</tspan>: <tspan fill="#E8EEF8">"protocol → UI"</tspan>,</text>
+    <text x="64" y="304">&#160;&#160;<tspan fill="#A9BCDD">coffee</tspan>: <tspan fill="#6F8FC4">Infinity</tspan>,</text>
+    <text x="64" y="328">};<tspan fill="#6F8FC4"> ▍<animate attributeName="opacity" values="1;1;0;0" dur="1.2s" repeatCount="indefinite"/></tspan></text>
+  </g>
+
+  <!-- intro -->
+  <g>
+    <text x="436" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="3" fill="#6F8FC4">HELLO, I'M</text>
+    <text x="436" y="92" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#E8EEF8">Harshal Tupe</text>
+    <text x="436" y="117" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#A9BCDD">Senior Software Engineer · Miraki Labs</text>
+    <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" fill="#CFDAEE">
+      <text x="436" y="150">I own features end to end, from the</text>
+      <text x="436" y="170">protocol layer to the UI. Promoted to</text>
+      <text x="436" y="190">senior within 7 months of joining.</text>
+    </g>
+  </g>
+
+  <!-- impact tiles -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" text-anchor="middle">
+    <g transform="translate(436 212)">
+      <rect width="104" height="78" rx="10" fill="#101B33" stroke="#1E2F55"/>
+      <rect x="14" width="76" height="2" rx="1" fill="url(#accent)"/>
+      <text x="52" y="36" font-size="22" font-weight="700" fill="#E8EEF8">25+</text>
+      <text x="52" y="54" font-size="9.5" letter-spacing="1.2" fill="#6F8FC4">HOSPITALS</text>
+      <text x="52" y="67" font-size="9.5" letter-spacing="1.2" fill="#6F8FC4">LIVE</text>
+    </g>
+    <g transform="translate(554 212)">
+      <rect width="104" height="78" rx="10" fill="#101B33" stroke="#1E2F55"/>
+      <rect x="14" width="76" height="2" rx="1" fill="url(#accent)"/>
+      <text x="52" y="36" font-size="22" font-weight="700" fill="#E8EEF8">100+</text>
+      <text x="52" y="54" font-size="9.5" letter-spacing="1.2" fill="#6F8FC4">STUDIES</text>
+      <text x="52" y="67" font-size="9.5" letter-spacing="1.2" fill="#6F8FC4">PER DAY</text>
+    </g>
+    <g transform="translate(672 212)">
+      <rect width="104" height="78" rx="10" fill="#101B33" stroke="#1E2F55"/>
+      <rect x="14" width="76" height="2" rx="1" fill="url(#accent)"/>
+      <text x="52" y="36" font-size="22" font-weight="700" fill="#E8EEF8">3 mo</text>
+      <text x="52" y="54" font-size="9.5" letter-spacing="1.2" fill="#6F8FC4">DESIGN TO</text>
+      <text x="52" y="67" font-size="9.5" letter-spacing="1.2" fill="#6F8FC4">PRODUCTION</text>
+    </g>
+  </g>
+
+  <!-- career timeline -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <rect x="452" y="321" width="308" height="2" rx="1" fill="url(#track)"/>
+
+    <circle cx="452" cy="322" r="5" fill="#0B1324" stroke="#4E6CA3" stroke-width="2"/>
+    <circle cx="606" cy="322" r="5" fill="#0B1324" stroke="#7F98C6" stroke-width="2"/>
+    <circle cx="760" cy="322" r="9" fill="#A9BCDD" fill-opacity="0.2">
+      <animate attributeName="r" values="6;11;6" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values="0.35;0;0.35" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="760" cy="322" r="5" fill="#E8EEF8"/>
+
+    <text x="440" y="346" font-size="10" letter-spacing="1" fill="#6F8FC4">JUL 2025</text>
+    <text x="440" y="362" font-size="11" fill="#CFDAEE">Intern · Komodo</text>
+    <text x="606" y="346" text-anchor="middle" font-size="10" letter-spacing="1" fill="#6F8FC4">NOV 2025</text>
+    <text x="606" y="362" text-anchor="middle" font-size="11" fill="#CFDAEE">Engineer · Miraki</text>
+    <text x="772" y="346" text-anchor="end" font-size="10" letter-spacing="1" fill="#6F8FC4">JUN 2026</text>
+    <text x="772" y="362" text-anchor="end" font-size="11" fill="#E8EEF8">Senior Engineer</text>
+  </g>
+</svg>

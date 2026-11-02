@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="64" viewBox="0 0 800 64" role="img" aria-label="Activity">
+  <defs>
+    <linearGradient id="l" x1="0" x2="1"><stop offset="0" stop-color="#2E4A7D" stop-opacity="0"/><stop offset="1" stop-color="#4E6CA3"/></linearGradient>
+    <linearGradient id="r" x1="1" x2="0"><stop offset="0" stop-color="#2E4A7D" stop-opacity="0"/><stop offset="1" stop-color="#4E6CA3"/></linearGradient>
+  </defs>
+  <rect x="40" y="31.5" width="258" height="1" fill="url(#l)"/>
+  <rect x="502" y="31.5" width="258" height="1" fill="url(#r)"/>
+  <rect x="314" y="12" width="172" height="40" rx="20" fill="#14213D" stroke="#2E4A7D"/>
+  <circle cx="345" cy="32" r="7" fill="none" stroke="#6F8FC4" stroke-width="1.8"/>
+  <circle cx="345" cy="32" r="2.6" fill="#A9BCDD"/>
+  <text x="362" y="39" textLength="96" lengthAdjust="spacingAndGlyphs" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#E8EEF8">Activity</text>
+</svg>
