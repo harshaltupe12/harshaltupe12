@@ -1,12 +1,8 @@
 name: Refresh activity card
 
+# Manual only: run it from the Actions tab ("Run workflow") when you want fresh numbers.
 on:
-  schedule:
-    - cron: "30 2 * * *"
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ["scripts/activity-card.mjs", ".github/workflows/activity-card.yml"]
 
 permissions:
   contents: write
