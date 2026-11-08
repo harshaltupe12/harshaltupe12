@@ -5,6 +5,7 @@
 
 import { writeFile } from "node:fs/promises";
 import { FONT, embedFont } from "./font.mjs";
+import { at } from "./motion.mjs";
 
 const [user = "harshaltupe12", outFile = "assets/activity.svg"] = process.argv.slice(2);
 
@@ -127,27 +128,49 @@ function defs(W, H, horizon) {
     </linearGradient>
     <radialGradient id="moonglow"><stop offset="0" stop-color="${C.haze}" stop-opacity="0.35"/><stop offset="1" stop-color="${C.haze}" stop-opacity="0"/></radialGradient>
     <radialGradient id="fireglow"><stop offset="0" stop-color="#F2A65A" stop-opacity="0.45"/><stop offset="1" stop-color="#F2A65A" stop-opacity="0"/></radialGradient>
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${C.paper}"/><stop offset="1" stop-color="${C.paper}" stop-opacity="0"/></linearGradient>
     ${campDefs}
     <clipPath id="frame"><rect width="${W}" height="${H}" rx="16"/></clipPath>
   </defs>`;
 }
 
-// Stars only in the sky, kept clear of the text blocks.
+// Stars only in the sky, kept clear of the text blocks. They scintillate the way real
+// stars do: brightness jitters irregularly on each star's own clock, low stars (more air
+// in the way) flicker harder than high ones, the brightest also flash a faint blue or warm
+// tint and pulse in size, and the faintest, most distant stars hold almost steady.
 function starField(W, H, n, avoid = []) {
   let seed = 11, out = "";
   const r = () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646;
   for (let i = 0; i < n; i++) {
-    const x = f(r() * W), y = f(r() * H), s = r(), o = f(0.3 + r() * 0.55);
+    const x = f(r() * W), y = f(r() * H), s = r(), o = 0.3 + r() * 0.55;
     if (avoid.some(([x0, y0, x1, y1]) => x > x0 && x < x1 && y > y0 && y < y1)) continue;
-    const tw = s > 0.85 ? `<animate attributeName="opacity" values="${o};0.15;${o}" dur="${f(2.5 + s * 3)}s" repeatCount="indefinite"/>` : "";
-    out += `<circle cx="${x}" cy="${y}" r="${s > 0.9 ? 1.4 : s > 0.55 ? 1 : 0.7}" fill="${C.paper}" opacity="${o}">${tw}</circle>`;
+    const size = s > 0.9 ? 1.5 : s > 0.55 ? 1 : 0.7;
+    const depth = 0.35 + 0.65 * (y / H);                      // flicker strength grows toward the horizon
+    const steps = 6 + Math.floor(r() * 4), dur = f(1.4 + r() * 2.6), begin = f(-r() * 4);
+    const times = [0, ...Array.from({ length: steps - 2 }, () => r()).sort(), 1].map((t) => t.toFixed(3));
+    const levels = times.map((_, k) => (k === 0 || k === steps - 1 ? o : Math.min(1, o * (1 - depth * 0.75 * r()) + (r() > 0.8 ? 0.25 : 0))).toFixed(2));
+    const steady = size < 1 && r() < 0.3;
+    let anim = steady ? "" : `<animate attributeName="opacity" values="${levels.join(";")}" keyTimes="${times.join(";")}" dur="${dur}s" begin="${begin}s" repeatCount="indefinite"/>`;
+    if (size > 1.2) {
+      const tint = r() > 0.5 ? "#CFE0FF" : "#FFF1D6";
+      anim += `<animate attributeName="r" values="${size};${f(size * 1.35)};${size};${f(size * 1.15)};${size}" dur="${f(dur * 1.3)}s" begin="${begin}s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="${C.paper};${tint};${C.paper}" dur="${f(dur * 1.7)}s" begin="${begin}s" repeatCount="indefinite"/>`;
+    }
+    out += `<circle cx="${x}" cy="${y}" r="${size}" fill="${C.paper}" opacity="${o.toFixed(2)}">${anim}</circle>`;
   }
   return out;
 }
 
-const moon = (x, y, r) => `<circle cx="${x}" cy="${y}" r="${r * 2.6}" fill="url(#moonglow)"/>
+const moon = (x, y, r) => `<circle cx="${x}" cy="${y}" r="${r * 2.6}" fill="url(#moonglow)"><animate attributeName="r" values="${r * 2.6};${r * 3.2};${r * 2.6}" dur="6s" repeatCount="indefinite"/></circle>
     <mask id="crescent"><rect x="${x - r}" y="${y - r}" width="${2 * r}" height="${2 * r}" fill="#fff"/><circle cx="${x + r * 0.45}" cy="${y - r * 0.25}" r="${r * 0.9}" fill="#000"/></mask>
-    <circle cx="${x}" cy="${y}" r="${r}" fill="${C.paper}" mask="url(#crescent)"/>`;
+    <circle class="fade" ${at(0.2)} cx="${x}" cy="${y}" r="${r}" fill="${C.paper}" mask="url(#crescent)"/>`;
+
+// A shooting star crosses the sky for about a second, every nine seconds.
+const shootingStar = (x, y, dx, dy, begin) => `<g opacity="0">
+      <line x1="0" y1="0" x2="${-dx * 0.32}" y2="${-dy * 0.32}" stroke="url(#streak)" stroke-width="1.4" stroke-linecap="round" transform="translate(${x} ${y})"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;${dx} ${dy};${dx} ${dy}" keyTimes="0;0.12;1" dur="9s" begin="${begin}s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.04;0.12;1" dur="9s" begin="${begin}s" repeatCount="indefinite"/>
+    </g>`;
 
 const pine = (x, h) => {
   const w = h * 0.42;
@@ -269,24 +292,32 @@ function landscape(s, W, H, area, monthEvery = 1) {
   const anchor = side ? (px > W / 2 ? "end" : "start") : "middle";
   const lx = side ? px + (px > W / 2 ? -14 : 14) : px;
   const ly = side ? py + 14 : py - 32;
-  return `<path d="${smooth(extend(r.back))}${close}" fill="#33467A" opacity="0.75"/>
+  // The ridge line draws over DRAW seconds from START; things on it appear as it passes.
+  const START = 0.5, DRAW = 2.2, when = (x) => START + DRAW * Math.min(1, Math.max(0, (x - area.x0) / (area.x1 - area.x0)));
+  return `<g class="fade" ${at(0.2)}><path d="${smooth(extend(r.back))}${close}" fill="#33467A" opacity="0.75"/></g>
     <path d="${smooth(extend(r.front))}${close}" fill="url(#land)"/>
-    <path d="${smooth(r.front)}" fill="none" stroke="${C.haze}" stroke-width="1.4" stroke-linejoin="round" opacity="0.9"/>
+    <path class="draw" ${at(START)} pathLength="1" d="${smooth(r.front)}" fill="none" stroke="${C.haze}" stroke-width="1.4" stroke-linejoin="round" opacity="0.9"/>
 
     <g font-family="${FONT}">
-      ${side ? "" : `<line x1="${f(px)}" x2="${f(px)}" y1="${f(py - 6)}" y2="${f(py - 26)}" stroke="${C.haze}" stroke-width="1"/>`}
-      <circle cx="${f(px)}" cy="${f(py)}" r="3.5" fill="${C.paper}"/>
-      <text x="${f(lx)}" y="${f(ly - 14)}" text-anchor="${anchor}" font-size="11" font-weight="700" letter-spacing="1.5" fill="${C.paper}">BUSIEST · ${MONTHS[s.bestMonth].toUpperCase()}</text>
-      <text x="${f(lx)}" y="${f(ly)}" text-anchor="${anchor}" font-size="11" fill="${C.haze}">${s.bestCount} contributions</text>
+      <g class="pop" ${at(when(px))}>${side ? "" : `<line x1="${f(px)}" x2="${f(px)}" y1="${f(py - 6)}" y2="${f(py - 26)}" stroke="${C.haze}" stroke-width="1"/>`}
+      <circle cx="${f(px)}" cy="${f(py)}" r="3.5" fill="${C.paper}"/></g>
+      <g class="up" ${at(when(px) + 0.2)}><text x="${f(lx)}" y="${f(ly - 14)}" text-anchor="${anchor}" font-size="11" font-weight="700" letter-spacing="1.5" fill="${C.paper}">BUSIEST · ${MONTHS[s.bestMonth].toUpperCase()}</text>
+      <text x="${f(lx)}" y="${f(ly)}" text-anchor="${anchor}" font-size="11" fill="${C.haze}">${s.bestCount} contributions</text></g>
 
-      <circle cx="${f(tx)}" cy="${f(ty)}" r="3" fill="${C.paper}"/>
-      <circle cx="${f(tx)}" cy="${f(ty)}" r="3" fill="none" stroke="${C.paper}"><animate attributeName="r" values="3;10" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite"/></circle>
+      <circle class="pop" ${at(START + DRAW)} cx="${f(tx)}" cy="${f(ty)}" r="3" fill="${C.paper}"/>
+      <circle cx="${f(tx)}" cy="${f(ty)}" r="3" fill="none" stroke="${C.paper}" opacity="0"><animate attributeName="r" values="3;10" dur="2s" begin="${(START + DRAW).toFixed(2)}s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0" dur="2s" begin="${(START + DRAW).toFixed(2)}s" repeatCount="indefinite"/></circle>
 
       <g font-size="10.5" letter-spacing="1" fill="${C.mid}">
-        ${r.months.filter((_, i) => i % monthEvery === 0).map(([x, m]) => `<text x="${f(x)}" y="${area.base + 24}">${m}</text>`).join("")}
+        ${r.months.filter((_, i) => i % monthEvery === 0).map(([x, m]) => `<text class="fade" ${at(when(x))} x="${f(x)}" y="${area.base + 24}">${m}</text>`).join("")}
       </g>
     </g>`;
 }
+
+// Email pill: the border breathes and the arrow nudges, inviting a click.
+const button = (x, y, w) => `<rect x="${x}" y="${y}" width="${w}" height="40" rx="20" fill="#0B1324" stroke="${C.mid}">
+        <animate attributeName="stroke" values="${C.mid};${C.haze};${C.mid}" dur="3.2s" begin="2s" repeatCount="indefinite"/></rect>
+      <text x="${x + 21.5}" y="${y + 24.5}" font-size="14" fill="${C.paper}">${EMAIL}</text>
+      <text class="nudge" x="${x + w - 20}" y="${y + 24.5}" text-anchor="end" font-size="14" fill="${C.steel}">→</text>`;
 
 const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
 const alt = (s) => `${s.total} contributions in the last year. Busiest month ${MONTHS[s.bestMonth]} with ${s.bestCount}. Current streak ${plural(s.current, "day")}, longest ${plural(s.longest, "day")}. Got an interesting problem? I read every message. Email ${EMAIL}.`;
@@ -294,32 +325,31 @@ const alt = (s) => `${s.total} contributions in the last year. Busiest month ${M
 function desktop(s) {
   const W = 800, H = 620, base = 330;
   const digits = String(s.total).length;
-  const stat = (x, value, label) => `<text x="${x}" y="66" text-anchor="end" font-size="20" font-weight="700" fill="${C.paper}">${value}</text>
-      <text x="${x}" y="86" text-anchor="end" font-size="10" letter-spacing="2" fill="${C.haze}">${label}</text>`;
+  const stat = (x, value, label, t) => `<g class="up" ${at(t)}><text x="${x}" y="66" text-anchor="end" font-size="20" font-weight="700" fill="${C.paper}">${value}</text>
+      <text x="${x}" y="86" text-anchor="end" font-size="10" letter-spacing="2" fill="${C.haze}">${label}</text></g>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${alt(s)}">
   ${defs(W, H, base)}
   <g clip-path="url(#frame)">
     <rect width="${W}" height="${H}" fill="url(#sky)"/>
     ${starField(W, 230, 80, [[30, 30, 310, 100], [500, 36, 780, 100]])}
+    ${shootingStar(250, 120, 190, 64, 3)}
     ${moon(430, 74, 18)}
     <g font-family="${FONT}">
-      <text x="44" y="82" font-size="42" font-weight="700" fill="${C.paper}">${s.total}</text>
-      <text x="${44 + digits * 25.5 + 14}" y="64" font-size="12" fill="${C.haze}">contributions</text>
-      <text x="${44 + digits * 25.5 + 14}" y="81" font-size="12" fill="${C.haze}">in the last year</text>
-      ${stat(600, plural(s.current, "day"), "CURRENT STREAK")}
-      ${stat(756, plural(s.longest, "day"), "LONGEST STREAK")}
+      <text class="up" ${at(0.1)} x="44" y="82" font-size="42" font-weight="700" fill="${C.paper}">${s.total}</text>
+      <text class="up" ${at(0.2)} x="${44 + digits * 25.5 + 14}" y="64" font-size="12" fill="${C.haze}">contributions</text>
+      <text class="up" ${at(0.26)} x="${44 + digits * 25.5 + 14}" y="81" font-size="12" fill="${C.haze}">in the last year</text>
+      ${stat(600, plural(s.current, "day"), "CURRENT STREAK", 0.3)}
+      ${stat(756, plural(s.longest, "day"), "LONGEST STREAK", 0.4)}
     </g>
     ${landscape(s, W, H, { x0: 36, x1: 764, base, height: 170 })}
 
-    <line x1="44" x2="756" y1="384" y2="384" stroke="${C.deep}"/>
+    <line class="fade" ${at(0.8)} x1="44" x2="756" y1="384" y2="384" stroke="${C.deep}"/>
     <g font-family="${FONT}">
-      <text x="44" y="428" font-size="11" letter-spacing="2.4" fill="${C.steel}">SAY HELLO</text>
-      <text x="44" y="468" font-size="28" font-weight="700" fill="${C.paper}">Got an interesting problem?</text>
-      <text x="44" y="502" font-size="15" fill="${C.haze}">I read every message. If the context is clear,</text>
-      <text x="44" y="526" font-size="15" fill="${C.haze}">you'll hear back from me.</text>
-      <rect x="44.5" y="550.5" width="290" height="40" rx="20" fill="#0B1324" stroke="${C.mid}"/>
-      <text x="66" y="575" font-size="14" fill="${C.paper}">${EMAIL}</text>
-      <text x="314" y="575" text-anchor="end" font-size="14" fill="${C.steel}">→</text>
+      <text class="up" ${at(0.9)} x="44" y="428" font-size="11" letter-spacing="2.4" fill="${C.steel}">SAY HELLO</text>
+      <text class="up" ${at(1.0)} x="44" y="468" font-size="28" font-weight="700" fill="${C.paper}">Got an interesting problem?</text>
+      <text class="up" ${at(1.15)} x="44" y="502" font-size="15" fill="${C.haze}">I read every message. If the context is clear,</text>
+      <text class="up" ${at(1.22)} x="44" y="526" font-size="15" fill="${C.haze}">you'll hear back from me.</text>
+      <g class="up" ${at(1.4)}>${button(44.5, 550.5, 290)}</g>
     </g>
 
     ${hill(`M470 ${H} C540 586 600 574 650 574 C710 574 760 580 ${W} 588 V${H} H470 Z`)}
@@ -337,28 +367,27 @@ function mobile(s) {
   <g clip-path="url(#frame)">
     <rect width="${W}" height="${H}" fill="url(#sky)"/>
     ${starField(W, 280, 50, [[20, 30, 300, 150]])}
+    ${shootingStar(60, 180, 160, 60, 4)}
     ${moon(336, 60, 14)}
     <g font-family="${FONT}">
-      <text x="28" y="66" font-size="38" font-weight="700" fill="${C.paper}">${s.total}</text>
-      <text x="28" y="90" font-size="12" fill="${C.haze}">contributions in the last year</text>
-      <text x="28" y="126" font-size="16" font-weight="700" fill="${C.paper}">${plural(s.current, "day")}</text>
-      <text x="28" y="143" font-size="9.5" letter-spacing="1.8" fill="${C.haze}">CURRENT STREAK</text>
-      <text x="200" y="126" font-size="16" font-weight="700" fill="${C.paper}">${plural(s.longest, "day")}</text>
-      <text x="200" y="143" font-size="9.5" letter-spacing="1.8" fill="${C.haze}">LONGEST STREAK</text>
+      <text class="up" ${at(0.1)} x="28" y="66" font-size="38" font-weight="700" fill="${C.paper}">${s.total}</text>
+      <text class="up" ${at(0.2)} x="28" y="90" font-size="12" fill="${C.haze}">contributions in the last year</text>
+      <text class="up" ${at(0.3)} x="28" y="126" font-size="16" font-weight="700" fill="${C.paper}">${plural(s.current, "day")}</text>
+      <text class="up" ${at(0.3)} x="28" y="143" font-size="9.5" letter-spacing="1.8" fill="${C.haze}">CURRENT STREAK</text>
+      <text class="up" ${at(0.4)} x="200" y="126" font-size="16" font-weight="700" fill="${C.paper}">${plural(s.longest, "day")}</text>
+      <text class="up" ${at(0.4)} x="200" y="143" font-size="9.5" letter-spacing="1.8" fill="${C.haze}">LONGEST STREAK</text>
     </g>
     ${landscape(s, W, H, { x0: 20, x1: 380, base, height: 150 }, 2)}
 
-    <line x1="28" x2="372" y1="442" y2="442" stroke="${C.deep}"/>
+    <line class="fade" ${at(0.8)} x1="28" x2="372" y1="442" y2="442" stroke="${C.deep}"/>
     <g font-family="${FONT}">
-      <text x="28" y="482" font-size="10.5" letter-spacing="2.2" fill="${C.steel}">SAY HELLO</text>
-      <text x="28" y="516" font-size="22" font-weight="700" fill="${C.paper}">Got an interesting</text>
-      <text x="28" y="544" font-size="22" font-weight="700" fill="${C.paper}">problem?</text>
-      <text x="28" y="578" font-size="14.5" fill="${C.haze}">I read every message. If the</text>
-      <text x="28" y="601" font-size="14.5" fill="${C.haze}">context is clear, you'll hear</text>
-      <text x="28" y="624" font-size="14.5" fill="${C.haze}">back from me.</text>
-      <rect x="28.5" y="648.5" width="290" height="40" rx="20" fill="#0B1324" stroke="${C.mid}"/>
-      <text x="50" y="673" font-size="14" fill="${C.paper}">${EMAIL}</text>
-      <text x="298" y="673" text-anchor="end" font-size="14" fill="${C.steel}">→</text>
+      <text class="up" ${at(0.9)} x="28" y="482" font-size="10.5" letter-spacing="2.2" fill="${C.steel}">SAY HELLO</text>
+      <text class="up" ${at(1)} x="28" y="516" font-size="22" font-weight="700" fill="${C.paper}">Got an interesting</text>
+      <text class="up" ${at(1.06)} x="28" y="544" font-size="22" font-weight="700" fill="${C.paper}">problem?</text>
+      <text class="up" ${at(1.15)} x="28" y="578" font-size="14.5" fill="${C.haze}">I read every message. If the</text>
+      <text class="up" ${at(1.2)} x="28" y="601" font-size="14.5" fill="${C.haze}">context is clear, you'll hear</text>
+      <text class="up" ${at(1.25)} x="28" y="624" font-size="14.5" fill="${C.haze}">back from me.</text>
+      <g class="up" ${at(1.4)}>${button(28.5, 648.5, 290)}</g>
     </g>
 
     ${hill(`M150 ${H} C210 752 250 744 300 744 C340 744 376 748 ${W} 754 V${H} H150 Z`)}

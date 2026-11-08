@@ -3,6 +3,7 @@
 // Badges and logos are fetched from shields.io at build time. Run from the repo root:
 //   node scripts/tech-stack.mjs
 import { writeFile } from "node:fs/promises";
+import { MOTION_CSS, at } from "./motion.mjs";
 
 
 const LIGHT = "2E4A7D", DARK = "1E2F55";
@@ -48,22 +49,38 @@ const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 const ALL = GROUPS.flatMap(([, items]) => items.map(([l]) => l));
 const ALT = `Tech stack: ${ALL.join(", ")}`;
 
+// Lays badge rows out centred. Badges rise in one after another, then a soft light
+// sweeps across them every few seconds (clipped to the badges themselves).
+function compose(rows, GAP, H) {
+  const widths = rows.map((row) => row.reduce((w, b) => w + b.width, 0) + GAP * (row.length - 1));
+  const W = Math.ceil(Math.max(...widths)), totalH = rows.length * (H + GAP) - GAP;
+  let out = "", clip = "", n = 0;
+  rows.forEach((row, r) => {
+    let x = (W - widths[r]) / 2;
+    for (const b of row) {
+      const y = r * (H + GAP);
+      out += `<g class="up" ${at(0.1 + n++ * 0.045)}>${b.svg.replace(/^<svg /, `<svg x="${x.toFixed(1)}" y="${y}" `)}</g>`;
+      clip += `<rect x="${x.toFixed(1)}" y="${y}" width="${b.width}" height="${H}"/>`;
+      x += b.width + GAP;
+    }
+  });
+  const sweepStart = (0.1 + n * 0.045 + 0.8).toFixed(2);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${totalH}" viewBox="0 0 ${W} ${totalH}" role="img" aria-label="${esc(ALT)}">
+  <style>${MOTION_CSS}</style>
+  <defs><clipPath id="badges">${clip}</clipPath>
+    <linearGradient id="sheen" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.5" stop-color="#fff" stop-opacity="0.22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+  ${out}
+  <g clip-path="url(#badges)"><rect x="-160" y="-20" width="140" height="${totalH + 40}" fill="url(#sheen)" transform="skewX(-20)">
+    <animate attributeName="x" values="-160;${W + 120};${W + 120}" keyTimes="0;0.3;1" dur="8s" begin="${sweepStart}s" repeatCount="indefinite"/></rect></g>
+</svg>
+`;
+}
+
 async function desktop() {
   const GAP = 6, H = 28;
   const rows = await Promise.all(ROWS.map((row, r) =>
     Promise.all(row.map((label) => fetchBadge(label, r % 2 ? DARK : LIGHT)))));
-  const widths = rows.map((row) => row.reduce((w, b) => w + b.width, 0) + GAP * (row.length - 1));
-  const W = Math.ceil(Math.max(...widths));
-  let out = "";
-  rows.forEach((row, r) => {
-    let x = (W - widths[r]) / 2;
-    for (const b of row) {
-      out += b.svg.replace(/^<svg /, `<svg x="${x.toFixed(1)}" y="${r * (H + GAP)}" `);
-      x += b.width + GAP;
-    }
-  });
-  const totalH = rows.length * (H + GAP) - GAP;
-  return { svg: `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${totalH}" viewBox="0 0 ${W} ${totalH}" role="img" aria-label="${esc(ALT)}">${out}</svg>\n`, logos: rows };
+  return { svg: compose(rows, GAP, H), logos: rows };
 }
 
 // Same badges as desktop, re-flowed into narrower rows so they scale down evenly on phones.
@@ -87,18 +104,7 @@ async function mobile() {
   for (let max = MAX; max >= 300 && rows.at(-1).length < 2; max -= 5) rows = pack(max);
   const badges = await Promise.all(rows.map((row, r) =>
     Promise.all(row.map((label) => fetchBadge(label, r % 2 ? DARK : LIGHT)))));
-  const widths = badges.map((row) => row.reduce((s, b) => s + b.width, 0) + GAP * (row.length - 1));
-  const W = Math.ceil(Math.max(...widths));
-  let out = "";
-  badges.forEach((row, r) => {
-    let x = (W - widths[r]) / 2;
-    for (const b of row) {
-      out += b.svg.replace(/^<svg /, `<svg x="${x.toFixed(1)}" y="${r * (H + GAP)}" `);
-      x += b.width + GAP;
-    }
-  });
-  const totalH = badges.length * (H + GAP) - GAP;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${totalH}" viewBox="0 0 ${W} ${totalH}" role="img" aria-label="${esc(ALT)}">${out}</svg>\n`;
+  return compose(badges, GAP, H);
 }
 
 const [d, m] = await Promise.all([desktop(), mobile()]);
